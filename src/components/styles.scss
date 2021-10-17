@@ -1,0 +1,17 @@
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content:center
+}
+
+.logo-img{
+    object-fit: contain;
+    height: 100px;
+    margin-top: 20px;
+    align-self: flex-start;
+}
+
+.heading{
+    margin-top: 20px;
+    align-self: center;
+}
