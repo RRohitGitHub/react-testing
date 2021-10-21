@@ -36,4 +36,18 @@ describe('App Component',()=>{
         expect(component.length).toBe(1);
     })
 
+    // Testing method that updates a state
+    it(' exampleMethod_updateState method should update state as expected',()=>{
+        const classInstance = wrapper.instance();
+        classInstance.exampleMethod_UpdateState();
+        const newState = classInstance.state.hideBtn;
+        expect(newState).toBe(true);
+    })
+
+    it(' exampleMethod_returnValue method should return value as expected',()=>{
+        const classInstance = wrapper.instance();
+        const value = classInstance.exampleMethod_returnValue(10);
+        expect(value).toBe(20);
+    })
+
 })
