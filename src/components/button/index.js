@@ -5,7 +5,7 @@ class SharedButton extends Component{
     
     submitEvent(){
         if(this.props.emitEvent){
-            this.props.emitEvent();
+           this.props.emitEvent();
         }
     }
 

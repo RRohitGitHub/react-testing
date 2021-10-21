@@ -22,12 +22,12 @@ describe('Shared Button Component',()=>{
     describe('Renders',()=>{
 
         let wrapper;
+        let mockFunc;
         beforeEach(()=>{
+            mockFunc = jest.fn();
             const props = {
                 buttonText:'Example button Text',
-                emitEvent:()=>{
-
-                }
+                emitEvent:mockFunc
             }
             wrapper = shallow(<SharedButton {...props} />)
         })
@@ -36,6 +36,14 @@ describe('Shared Button Component',()=>{
             const button = findByTestAttr(wrapper,'buttonComponent')
             expect(button.length).toBe(1);
         })
+
+        it('Should emit callback on click event',()=>{
+            const button = findByTestAttr(wrapper,'buttonComponent')
+            button.simulate('click');
+            const callbacks = mockFunc.mock.calls.length
+            expect(callbacks).toBe(1)
+        })
+
 
     })
 
